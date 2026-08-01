@@ -6,6 +6,8 @@ public class PlayerController : MonoBehaviour
     Vector2 moveInput;
     [SerializeField] float moveSpeed;
 
+    public float x, y;
+
     private void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
@@ -13,8 +15,8 @@ public class PlayerController : MonoBehaviour
 
     private void Update()
     {
-        float x = Input.GetAxisRaw("Horizontal");
-        float y = Input.GetAxisRaw("Vertical");
+        x = Input.GetAxisRaw("Horizontal");
+        y = Input.GetAxisRaw("Vertical");
 
         moveInput = new Vector2(x, y);
     }
