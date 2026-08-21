@@ -14,6 +14,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::ItemData
   itemId: item_potion_large
   displayName: "\uD070 \uCCB4\uB825 \uD3EC\uC158"
+  description: "\uCCB4\uB825 50 \uD68C\uBCF5"
+  icon: {fileID: 0}
   itemType: 0
   maxStack: 10
-  description: "\uCCB4\uB825 50 \uD68C\uBCF5"
+  healAmount: 50
+  attackBonus: 0
+  defenseBonus: 0

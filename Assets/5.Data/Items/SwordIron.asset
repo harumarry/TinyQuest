@@ -14,6 +14,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::ItemData
   itemId: item_sword_iron
   displayName: "\uCCA0\uAC80"
+  description: "\uACF5\uACA9\uB825 +7"
+  icon: {fileID: 0}
   itemType: 1
   maxStack: 1
-  description: "\uACF5\uACA9\uB825 +7"
+  healAmount: 0
+  attackBonus: 7
+  defenseBonus: 0

@@ -21,7 +21,7 @@ public class PlayerHealth : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.F2))
         {
-            Heal(10);
+            TryHeal(10);
         }
     }
 
@@ -30,8 +30,11 @@ public class PlayerHealth : MonoBehaviour
         CurrentHp = Mathf.Max(CurrentHp - amount, 0);
     }
 
-    public void Heal(int amount)
+    public bool TryHeal(int amount)
     {
+        if (CurrentHp >= MaxHp)
+            return false;
         CurrentHp = Mathf.Min(CurrentHp + amount, MaxHp);
+        return true;
     }
 }
