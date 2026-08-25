@@ -12,19 +12,6 @@ public class PlayerHealth : MonoBehaviour
         CurrentHp = MaxHp;
     }
 
-    private void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.F1))
-        {
-            TakeDamage(10);
-        }
-
-        if (Input.GetKeyDown(KeyCode.F2))
-        {
-            TryHeal(10);
-        }
-    }
-
     public void TakeDamage(int amount)
     {
         CurrentHp = Mathf.Max(CurrentHp - amount, 0);

@@ -9,8 +9,18 @@ public class WorldItemPickup : MonoBehaviour
     {
         if (collision.CompareTag("Player"))
         {
-            Debug.Log(itemData.displayName);
-            Debug.Log(count);
+            Inventory inventory = collision.GetComponent<Inventory>();
+
+            int remainingCount = inventory.AddItem(itemData, count);
+
+            if (remainingCount > 0)
+            {
+                count = remainingCount;
+            }
+            else if (remainingCount == 0)
+            {               
+                Destroy(gameObject);
+            }
         }
        
     }

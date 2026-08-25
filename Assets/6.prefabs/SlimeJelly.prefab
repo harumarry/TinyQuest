@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 4322189736817932840}
   - component: {fileID: 1771028283596787993}
   m_Layer: 0
-  m_Name: WorldItem
+  m_Name: SlimeJelly
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -84,7 +84,7 @@ SpriteRenderer:
   m_SortingOrder: 0
   m_MaskInteraction: 0
   m_Sprite: {fileID: -2413806693520163455, guid: a86470a33a6bf42c4b3595704624658b, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0, g: 1, b: 0.062781096, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -141,3 +141,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 02c7047186a41534b8cfaf65136eebc4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::WorldItemPickup
+  itemData: {fileID: 11400000, guid: 75e28252e0f57c4438f45bcd860d7506, type: 2}
+  count: 30
