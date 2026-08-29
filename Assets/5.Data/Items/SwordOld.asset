@@ -15,7 +15,7 @@ MonoBehaviour:
   itemId: item_sword_old
   displayName: "\uB0A1\uC740 \uAC80"
   description: "\uACF5\uACA9\uB825 +3"
-  icon: {fileID: 0}
+  icon: {fileID: 4476182205578675844, guid: 12857b6f93b6997418a1b301316e676e, type: 3}
   itemType: 1
   maxStack: 1
   healAmount: 0

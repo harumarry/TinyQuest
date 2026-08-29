@@ -15,7 +15,7 @@ MonoBehaviour:
   itemId: item_armor_leather
   displayName: "\uAC00\uC8FD \uAC11\uC637"
   description: "\uBC29\uC5B4\uB825 +4"
-  icon: {fileID: 0}
+  icon: {fileID: 1129180862686864470, guid: a8344ff66277e2c47bea871b50ba44fe, type: 3}
   itemType: 2
   maxStack: 1
   healAmount: 0

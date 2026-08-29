@@ -15,7 +15,7 @@ MonoBehaviour:
   itemId: item_potion_large
   displayName: "\uD070 \uCCB4\uB825 \uD3EC\uC158"
   description: "\uCCB4\uB825 50 \uD68C\uBCF5"
-  icon: {fileID: 0}
+  icon: {fileID: 8306414610740238925, guid: 3814c77a5ced9474aa0cb78c5ad8c1f4, type: 3}
   itemType: 0
   maxStack: 10
   healAmount: 50

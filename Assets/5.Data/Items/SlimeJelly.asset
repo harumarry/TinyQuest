@@ -14,6 +14,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::ItemData
   itemId: item_slime_jelly
   displayName: "\uC2AC\uB77C\uC784 \uC824\uB9AC"
+  description: "1 \uCC28 \uAE30\uB2A5 \uC5C6\uC74C"
+  icon: {fileID: 2208865305060610565, guid: 916c7fd383a39214dbd9a893f900d538, type: 3}
   itemType: 3
   maxStack: 20
-  description: "1 \uCC28 \uAE30\uB2A5 \uC5C6\uC74C"
+  healAmount: 0
+  attackBonus: 0
+  defenseBonus: 0

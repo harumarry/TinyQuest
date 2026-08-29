@@ -1,9 +1,12 @@
+using System;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class Inventory : MonoBehaviour
 {
     List<InventorySlot> slots = new List<InventorySlot>(12);
+
+    public event Action InventoryChanged;
 
     private void Start()
     {
@@ -41,6 +44,11 @@ public class Inventory : MonoBehaviour
                     remainingCount -= addCount;
                 }
             }
+        }    
+
+        if ( remainingCount != count)
+        {
+            InventoryChanged?.Invoke();
         }
 
         return remainingCount;
@@ -59,9 +67,16 @@ public class Inventory : MonoBehaviour
                 slot.itemData = null;
             }
 
+            InventoryChanged?.Invoke();
+
             return true;
         }
 
         return false;
+    }
+
+    public InventorySlot GetInventorySlot(int i)
+    {
+        return slots[i];
     }
 }
