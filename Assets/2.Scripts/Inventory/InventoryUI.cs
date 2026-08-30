@@ -10,11 +10,22 @@ public class InventoryUI : MonoBehaviour
     private void OnEnable()
     {
         inventory.InventoryChanged += RefreshUI;
+
+        for (int i = 0; i < inventorySlotUIs.Count; i++)
+        {
+            inventorySlotUIs[i].slotIndex = i;
+            inventorySlotUIs[i].SlotClicked += SelectionIndicator;
+        }
     }
 
     private void OnDisable()
     {
         inventory.InventoryChanged -= RefreshUI;
+
+        foreach (InventorySlotUI slotUI in inventorySlotUIs)
+        {
+            slotUI.SlotClicked -= SelectionIndicator;
+        }
     }
 
     public void RefreshUI()
@@ -35,5 +46,17 @@ public class InventoryUI : MonoBehaviour
                 slotUI.countText.text = "0";
             }
         }      
+    }
+
+    public void SelectionIndicator(int index)
+    {
+        foreach (InventorySlotUI slotUI in inventorySlotUIs)
+        {
+            slotUI.selected.SetActive(false);
+        }
+
+        inventorySlotUIs[index].selected.SetActive(true);
+
+        inventory.SelectSlot(index);
     }
 }

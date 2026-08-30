@@ -1,3 +1,4 @@
+using System;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
@@ -6,9 +7,12 @@ public class InventorySlotUI : MonoBehaviour
 {
     public Image icon;
     public TextMeshProUGUI countText;
+    public GameObject selected;
+    public int slotIndex;
 
     Button button;
-    int slotIndex;
+
+    public event Action<int> SlotClicked;
 
     private void Awake()
     {
@@ -18,7 +22,6 @@ public class InventorySlotUI : MonoBehaviour
 
     void OnSlotClicked()
     {
-        // 인벤토리 UI 에 인덱스 전달
-        // 본인 슬롯 인덱스를 어떻게 알아내는지..
+        SlotClicked?.Invoke(slotIndex);
     }
 }

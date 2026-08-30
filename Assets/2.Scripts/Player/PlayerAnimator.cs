@@ -26,7 +26,7 @@ public class PlayerAnimator : MonoBehaviour
         }
         else if (controller.y > 0)
         {
-            WalkUP();
+            WalkUp();
         }
         else if (controller.y < 0)
         {
@@ -55,7 +55,7 @@ public class PlayerAnimator : MonoBehaviour
         animator.SetFloat("MoveY", 0f);
     }
 
-    void WalkUP()
+    void WalkUp()
     {
         spriteRenderer.flipX = false;
         animator.SetBool("IsMoving", true);

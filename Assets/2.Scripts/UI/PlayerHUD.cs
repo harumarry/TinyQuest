@@ -4,7 +4,7 @@ using TMPro;
 public class PlayerHUD : MonoBehaviour
 {
     [SerializeField] PlayerStats playerStats;
-    [SerializeField] PlayerHealth playerhealth;
+    [SerializeField] PlayerHealth playerHealth;
 
     [SerializeField] TMP_Text hpText;
     [SerializeField] TMP_Text attackText;
@@ -12,7 +12,7 @@ public class PlayerHUD : MonoBehaviour
 
     void Update()
     {
-        hpText.text = ("HP " + playerhealth.CurrentHp + "/" + playerhealth.MaxHp);
+        hpText.text = ("HP " + playerHealth.CurrentHp + "/" + playerHealth.MaxHp);
         attackText.text = ("공격력 " + playerStats.FinalAttack);
         defenseText.text = ("방어력 " + playerStats.FinalDefense);
     }

@@ -142,4 +142,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::WorldItemPickup
   itemData: {fileID: 11400000, guid: 75e28252e0f57c4438f45bcd860d7506, type: 2}
-  count: 10
+  count: 25

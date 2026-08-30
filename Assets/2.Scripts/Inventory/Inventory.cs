@@ -8,7 +8,9 @@ public class Inventory : MonoBehaviour
 
     public event Action InventoryChanged;
 
-    private void Start()
+    public int SelectedSlotIndex {  get; private set; } = -1;
+
+    private void Awake()
     {
         for (int i = 0; i < 12; i++)
         {
@@ -78,5 +80,10 @@ public class Inventory : MonoBehaviour
     public InventorySlot GetInventorySlot(int i)
     {
         return slots[i];
+    }
+
+    public void SelectSlot(int index)
+    {
+        SelectedSlotIndex = index;
     }
 }

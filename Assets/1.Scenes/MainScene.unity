@@ -767,10 +767,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 1771028283596787993, guid: 9df95f2f589a601418565de4728cc14a, type: 3}
-      propertyPath: count
-      value: 25
-      objectReference: {fileID: 0}
     - target: {fileID: 2563323594012049387, guid: 9df95f2f589a601418565de4728cc14a, type: 3}
       propertyPath: m_LocalPosition.x
       value: 2
@@ -1794,7 +1790,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerHUD
   playerStats: {fileID: 627230381}
-  playerhealth: {fileID: 627230380}
+  playerHealth: {fileID: 627230380}
   hpText: {fileID: 705854194}
   attackText: {fileID: 255704179}
   defenseText: {fileID: 1441021407}
@@ -3563,10 +3559,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 1771028283596787993, guid: 038d9f4707910964cbc36db35eb52a81, type: 3}
-      propertyPath: count
-      value: 40
-      objectReference: {fileID: 0}
     - target: {fileID: 2563323594012049387, guid: 038d9f4707910964cbc36db35eb52a81, type: 3}
       propertyPath: m_LocalPosition.x
       value: 2
