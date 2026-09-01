@@ -4,18 +4,28 @@ using UnityEngine;
 public class InventoryUI : MonoBehaviour
 {
     [SerializeField] Inventory inventory;
+    [SerializeField] ItemDetailUI itemDetailUI;
 
     [SerializeField] List<InventorySlotUI> inventorySlotUIs = new();
+
+    private void Awake()
+    {
+        for (int i = 0; i < inventorySlotUIs.Count; i++)
+        {
+            inventorySlotUIs[i].slotIndex = i;
+        }
+    }
 
     private void OnEnable()
     {
         inventory.InventoryChanged += RefreshUI;
 
-        for (int i = 0; i < inventorySlotUIs.Count; i++)
+        foreach (InventorySlotUI slotUI in inventorySlotUIs)
         {
-            inventorySlotUIs[i].slotIndex = i;
-            inventorySlotUIs[i].SlotClicked += SelectionIndicator;
+            slotUI.SlotClicked += SelectionIndicator;
         }
+
+        RefreshUI();
     }
 
     private void OnDisable()
@@ -45,7 +55,7 @@ public class InventoryUI : MonoBehaviour
                 slotUI.icon.sprite = null;
                 slotUI.countText.text = "0";
             }
-        }      
+        }
     }
 
     public void SelectionIndicator(int index)
@@ -55,8 +65,19 @@ public class InventoryUI : MonoBehaviour
             slotUI.selected.SetActive(false);
         }
 
+        InventorySlot selectedSlot = inventory.GetInventorySlot(index);
+
+        if (selectedSlot.itemData != null)
+        {
+            itemDetailUI.Show(selectedSlot.itemData);
+        }
+        else
+        {
+            itemDetailUI.Hide();
+        }
+
         inventorySlotUIs[index].selected.SetActive(true);
 
-        inventory.SelectSlot(index);
+        inventory.SelectSlot(index); // 인벤토리에도 선택 인덱스를 전달
     }
 }
