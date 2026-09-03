@@ -20,6 +20,11 @@ public class InventorySlotUI : MonoBehaviour
         button.onClick.AddListener(OnSlotClicked);
     }
 
+    private void OnDisable()
+    {
+        selected.SetActive(false);
+    }
+
     void OnSlotClicked()
     {
         SlotClicked?.Invoke(slotIndex);
