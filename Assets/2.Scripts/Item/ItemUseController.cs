@@ -8,22 +8,22 @@ public class ItemUseController : MonoBehaviour
 
     private void OnEnable()
     {
-        itemDetailUI.UseRequested += UseSelectedItem;
+        itemDetailUI.ItemActionRequested += UseItem;
     }
 
     private void OnDisable()
     {
-        itemDetailUI.UseRequested -= UseSelectedItem;
+        itemDetailUI.ItemActionRequested -= UseItem;
     }
 
-    void UseSelectedItem()
+    void UseItem(ItemData itemData)
     {
         int slotIndex = inventory.SelectedSlotIndex;
         InventorySlot slot = inventory.GetInventorySlot(slotIndex);
 
-        if (slot.itemData.itemType != ItemType.Consumable) return;
+        if (itemData.itemType != ItemType.Consumable) return;
 
-        bool isHealed = playerHealth.TryHeal(slot.itemData.healAmount);
+        bool isHealed = playerHealth.TryHeal(itemData.healAmount);
         if (isHealed == false) return;
 
         inventory.TryRemoveAt(slotIndex, 1);

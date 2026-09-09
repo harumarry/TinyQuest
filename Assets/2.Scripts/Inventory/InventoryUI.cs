@@ -65,6 +65,7 @@ public class InventoryUI : MonoBehaviour
             slotUI.selected.SetActive(false);
         }
 
+        inventory.SelectSlot(index); // 인벤토리에도 선택 인덱스를 전달
         InventorySlot selectedSlot = inventory.GetInventorySlot(index);
 
         if (selectedSlot.itemData != null)
@@ -77,7 +78,5 @@ public class InventoryUI : MonoBehaviour
         }
 
         inventorySlotUIs[index].selected.SetActive(true);
-
-        inventory.SelectSlot(index); // 인벤토리에도 선택 인덱스를 전달
     }
 }

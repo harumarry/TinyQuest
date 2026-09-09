@@ -8,7 +8,7 @@ public class Inventory : MonoBehaviour
 
     public event Action InventoryChanged;
 
-    public int SelectedSlotIndex {  get; private set; } = -1;
+    [HideInInspector] public int SelectedSlotIndex {  get; private set; } = -1;
 
     private void Awake()
     {
