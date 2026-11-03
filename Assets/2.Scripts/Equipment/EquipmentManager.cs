@@ -23,7 +23,7 @@ public class EquipmentManager : MonoBehaviour
         itemDetailUI.ItemActionRequested -= HandleItemAction;
     }
 
-    void HandleItemAction(ItemData itemData)
+    public void HandleItemAction(ItemData itemData)
     {
         switch (itemData.itemType)
         {
@@ -56,8 +56,10 @@ public class EquipmentManager : MonoBehaviour
         itemDetailUI.Show(itemData);
     }
 
-    void EquipWeapon(ItemData itemData)
+    public void EquipWeapon(ItemData itemData)
     {
+        if (itemData == null) return;
+
         if (CurrentWeapon != null)
         {
             playerStats.RemoveBonusAttack(CurrentWeapon.attackBonus);
@@ -65,12 +67,14 @@ public class EquipmentManager : MonoBehaviour
 
         CurrentWeapon = itemData;
         WeaponSlotIndex = inventory.SelectedSlotIndex;
-
+      
         playerStats.AddBonusAttack(itemData.attackBonus);
     }
-   
-    void EquipArmor(ItemData itemData)
+
+    public void EquipArmor(ItemData itemData)
     {
+        if (itemData == null) return;
+
         if (CurrentArmor != null)
         {
             playerStats.RemoveBonusDefense(CurrentArmor.defenseBonus);
@@ -104,5 +108,13 @@ public class EquipmentManager : MonoBehaviour
         ArmorSlotIndex = -1;
     }
 
+    public void SetWeaponSlotIndex(int index)
+    {
+        WeaponSlotIndex = index;
+    }
 
+    public void SetArmorSlotIndex(int index)
+    {
+        ArmorSlotIndex = index;
+    }
 }

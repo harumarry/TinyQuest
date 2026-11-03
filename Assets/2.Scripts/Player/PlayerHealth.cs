@@ -3,25 +3,26 @@ using UnityEngine;
 public class PlayerHealth : MonoBehaviour
 {
     [SerializeField] int maxHp = 100;
+    [SerializeField] int currentHp = 50;
 
-    public int CurrentHp { get; private set; }
+    public int CurrentHp => currentHp;
     public int MaxHp => maxHp;
-
-    private void Start()
-    {
-        CurrentHp = MaxHp;
-    }
 
     public void TakeDamage(int amount)
     {
-        CurrentHp = Mathf.Max(CurrentHp - amount, 0);
+        currentHp = Mathf.Max(currentHp - amount, 0);
     }
 
     public bool TryHeal(int amount)
     {
-        if (CurrentHp >= MaxHp)
+        if (currentHp >= maxHp)
             return false;
-        CurrentHp = Mathf.Min(CurrentHp + amount, MaxHp);
+        currentHp = Mathf.Min(currentHp + amount, maxHp);
         return true;
+    }
+
+    public void SetHp(int hp)
+    {
+        currentHp = hp;
     }
 }

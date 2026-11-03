@@ -4,14 +4,8 @@ using TMPro;
 
 public class EquipmentSlotUI : MonoBehaviour
 {
-    Image icon;
-    TextMeshProUGUI itemName;
-
-    private void Awake()
-    {
-        icon = transform.Find("Icon").GetComponent<Image>();
-        itemName = transform.Find("Name").GetComponent<TextMeshProUGUI>();
-    }
+    [SerializeField] Image icon;
+    [SerializeField] TextMeshProUGUI itemName;
 
     public void SetItem(ItemData itemData)
     {
